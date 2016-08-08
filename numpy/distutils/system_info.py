@@ -331,8 +331,8 @@ def get_info(name, notfound_action=0):
           # openblas with embedded lapack
           'openblas_lapack': openblas_lapack_info, # use blas_opt instead
           'blis': blis_info,                  # use blas_opt instead
-          'lapack_mkl': lapack_mkl_info,      # use lapack_opt instead
-          'blas_mkl': blas_mkl_info,          # use blas_opt instead
+          'lapack_mkl': mkl_info,      # use lapack_opt instead
+          'blas_mkl': mkl_info,          # use blas_opt instead
           'x11': x11_info,
           'fft_opt': fft_opt_info,
           'fftw': fftw_info,
@@ -1024,14 +1024,6 @@ class mkl_info(system_info):
         else:
             dict_append(info, libraries=['pthread'])
         self.set_info(**info)
-
-
-class lapack_mkl_info(mkl_info):
-    pass
-
-
-class blas_mkl_info(mkl_info):
-    pass
 
 
 class atlas_info(system_info):
